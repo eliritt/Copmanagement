@@ -1,4 +1,4 @@
-# user-story
+# requirements-functional
 # Personalabteilung
 ##
 Als Mitarbeiter der Personalabteilung möchte ich können:
@@ -11,15 +11,7 @@ Als Mitarbeiter der Personalabteilung möchte ich können:
 ##
 -  Personaldatenverwaltung (erstellen, adaptieren, entfernen)
 ##
--  Sammlung von Fortbildungsangeboten
-##
--  Abwicklung von Schulungen / Umschulungen
-##
 -  Abrechnung von Fortbildungsaktivitäten
-##
--  Generelle Unternehmenskommunikation
-## 
--  rechtliche Abwicklung von Arbeitsschutz
 ##
 -  Abwicklung Kurzarbeit
 ##
@@ -28,8 +20,6 @@ Als Mitarbeiter der Personalabteilung möchte ich können:
 -  Abwicklung Kündigungen
 ##
 -  Terminierung von Einarbeitungsprozessen (Ausbildung / Einarbeitung)
-##
--  innerbetriebliche Stellenausschreibungen
 ##
 -  Archivierung Bewerbungsunterlagen / Neuzugänge
 ##
