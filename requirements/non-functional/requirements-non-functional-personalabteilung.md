@@ -1,36 +1,14 @@
-# requirements-non-functional
+# requirements-functional
 # Personalabteilung
 ##
 Als Mitarbeiter der Personalabteilung möchte ich können:
 #
--  Dienstpläne erfassen, adaptieren, entfernen
+-  Sammlung von Fortbildungsangeboten
 ##
--  eine Bearbeitung von Arbeits-, Urlaubs- und Fehlzeiten (Krankenstände) durchführen
+-  Abwicklung von Schulungen / Umschulungen
 ##
--  Mitarbeiter einbinden, adaptieren, ausscheiden
+-  Generelle Unternehmenskommunikation
+## 
+-  rechtliche Abwicklung von Arbeitsschutz
 ##
--  Personaldatenverwaltung (erstellen, adaptieren, entfernen)
-##
--  Abrechnung von Fortbildungsaktivitäten
-##
--  Abwicklung Kurzarbeit
-##
--  Abwicklung Versetzungen
-##
--  Abwicklung Kündigungen
-##
--  Terminierung von Einarbeitungsprozessen (Ausbildung / Einarbeitung)
-##
--  Archivierung Bewerbungsunterlagen / Neuzugänge
-##
--  Personensuche
-##
--  Personalstatistik
-##
--  Entgeltabrechnung
-##
--  Zahlungen von Ausgleichsabgaben erteilen
-##
--  Einsicht in die Lohnverrechnung
-##
--  Sonderzahlungen (Pauschalen) erteilen/erfassen
+-  innerbetriebliche Stellenausschreibungen
