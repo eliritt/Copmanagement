@@ -2,44 +2,44 @@
 ##
 Als Mitarbeiter der Personalabteilung möchte ich können:
 #
-- Dienstpläne erfassen, adaptieren, entfernen
+- 1. Dienstpläne erfassen, adaptieren, entfernen
 ##
-- eine Bearbeitung von Arbeits-, Urlaubs- und Fehlzeiten (Krankenstände) durchführen
+- 1. eine Bearbeitung von Arbeits-, Urlaubs- und Fehlzeiten (Krankenstände) durchführen
 ##
-- Mitarbeiter einbinden, adaptieren, ausscheiden
+- 1. Mitarbeiter einbinden, adaptieren, ausscheiden
 ##
-- Personaldatenverwaltung (erstellen, adaptieren, entfernen)
+- 1. Personaldatenverwaltung (erstellen, adaptieren, entfernen)
 ##
-- Sammlung von Fortbildungsangeboten
+- 2. Sammlung von Fortbildungsangeboten
 ##
-- Abwicklung von Schulungen / Umschulungen
+- 2. Abwicklung von Schulungen / Umschulungen
 ##
-- Abrechnung von Fortbildungsaktivitäten
+- 1. Abrechnung von Fortbildungsaktivitäten
 ##
-- Generelle Unternehmenskommunikation
+- 2. Generelle Unternehmenskommunikation
 ## 
-- rechtliche Abwicklung von Arbeitsschutz
+- 2. rechtliche Abwicklung von Arbeitsschutz
 ##
-- Abwicklung Kurzarbeit
+- 1. Abwicklung Kurzarbeit
 ##
-- Abwicklung Versetzungen
+- 1. Abwicklung Versetzungen
 ##
-- Abwicklung Kündigungen
+- 1. Abwicklung Kündigungen
 ##
-- Terminierung von Einarbeitungsprozessen
+- 1. Terminierung von Einarbeitungsprozessen (Ausbildung / Einarbeitung)
 ##
-- innerbetriebliche Stellenausschreibungen
+- 2. innerbetriebliche Stellenausschreibungen
 ##
-- Archivierung Bewerbungsunterlagen / Neuzugänge
+- 1. Archivierung Bewerbungsunterlagen / Neuzugänge
 ##
-- Personensuche
+- 1. Personensuche
 ##
-- Personalstatistik
+- 1. Personalstatistik
 ##
-- Entgeltabrechnung
+- 1. Entgeltabrechnung
 ##
-- Zahlungen von Ausgleichsabgaben erteilen
+- 1. Zahlungen von Ausgleichsabgaben erteilen
 ##
-- Einsicht in die Lohnverrechnung
+- 1. Einsicht in die Lohnverrechnung
 ##
-- Sonderzahlungen (Pauschalen) erteilen/erfassen
+- 1. Sonderzahlungen (Pauschalen) erteilen/erfassen
