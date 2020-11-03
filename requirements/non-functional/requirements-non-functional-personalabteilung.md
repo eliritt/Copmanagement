@@ -1,4 +1,4 @@
-# requirements-functional
+# requirements-non-functional
 # Personalabteilung
 ##
 Als Mitarbeiter der Personalabteilung möchte ich können:
