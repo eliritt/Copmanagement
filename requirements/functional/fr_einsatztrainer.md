@@ -11,3 +11,12 @@
 - #### Das System muss erfassen können, wer wann welches Training absolviert hat.
 
 - #### Das System muss für jeden Teilnehmer eine Teilnahmebestätigung generieren und ausdrucken können.
+
+| Funktion                        | Eingaben                                                                         | Umsetzung | Ausgabe                                           | Zeit? |
+| ------------------------------- | -------------------------------------------------------------------------------- | --------- | ------------------------------------------------- | ----- |
+| Training erstellen              | (TrainingsID)?, Titel, Beschreibung, Datum, Uhrzeit, Ort, maxTN, Voraussetzungen |           | Training erfolgreich erstellt / Fehler            |       |
+| TN-Übersicht ausgeben           | (TrainingsID)                                                                    |           | Teilnehmerübersicht im Programm zum jew. Training |       |
+| Teilnehmerliste generieren      | (TrainingsID), Button "Liste generieren"                                         |           | Teilnehmerliste als PDF (zum Ausdrucken)          |       |
+| Teilnahme bestätigen pro TN     | (TrainingsID), (TeilnehmerID), Button?, Checkbox?                                |           | "Teilnahme für TN X wurde bestätigt." / Fehler    |       |
+| Teilnahmebestätigung generieren | (TrainingsID), (TeilnehmerID), Button "Bestätigung generieren"                   |           | Teilnehmerbestätigung als PDF (zum Ausdrucken)    |       |
+|                                 |                                                                                  |           |                                                   |       |
