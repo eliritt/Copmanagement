@@ -3,11 +3,11 @@ package persons;
 import events.Examination;
 
 public class Medic extends Employee {
-//	class variables
 	private int examCounter = 0;
 	
 	public Medic() {
-		
+//		TODO build constructor
+//		super();
 	}
 	
 	public void createExamination() {
@@ -16,15 +16,15 @@ public class Medic extends Employee {
 	
 	public void completeExamination() {
 //		TODO stuff
-		this.examCounter++;
+//		this.examCounter++;
 	}
 	
 	public void confirmExamination(Examination e, Employee emp) {
-		
+//		TODO Change "Employee" to the class for policemen in field
 	}
 	
 	public void generateAttest(Examination e, Employee emp) {
-		
+//		TODO Change "Employee" to the class for policemen in field
 	}
 	
 }
