@@ -2,13 +2,16 @@ package model.events;
 
 import model.persons.Employee;
 
+import java.time.LocalDateTime;
+
 public class Examination {
 	private final int examID = 0; // auto increment?
-	private final String name, date;
+	private final String name;
+	private final LocalDateTime date;
 	
 //	TODO implement auto increment id method
 	
-	public Examination(String name, String date) {
+	public Examination(String name, LocalDateTime date) {
 //		TODO add id (auto increment function implemented)
 		this.name = name;
 		this.date = date;
@@ -16,7 +19,7 @@ public class Examination {
 	
 	public Employee[] getParticipants() {
 		Employee[] participants = new Employee[1]; // just to get no errors
-//		TODO change array size
+//		TODO change to List
 		
 		return participants;
 	}
