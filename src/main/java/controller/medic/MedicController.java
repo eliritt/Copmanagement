@@ -3,8 +3,12 @@ package controller.medic;
 import model.events.Examination;
 import model.persons.Employee;
 
+import java.util.ArrayList;
+
 public class MedicController {
-    // Do stuff here
+
+    private List<Examination> examDates = new ArrayList<>(); 
+
     MedicController()  {
 
     }
