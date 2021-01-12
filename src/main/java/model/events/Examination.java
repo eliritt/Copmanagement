@@ -4,7 +4,7 @@ import model.persons.Employee;
 
 public class Examination {
 	private final int examID = 0; // auto increment?
-	private String name, date;
+	private final String name, date;
 	
 //	TODO implement auto increment id method
 	
