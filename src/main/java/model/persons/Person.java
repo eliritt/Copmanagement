@@ -50,11 +50,6 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", address=" + address +
-                '}';
+        return "[Person] First name = "+firstname+" | Last name = "+lastname+" | DateOfBirth = "+dateOfBirth+" | Address = "+address.toString();
     }
 }
