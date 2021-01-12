@@ -1,6 +1,6 @@
-package events;
+package model.events;
 
-import persons.Employee;
+import model.persons.Employee;
 
 public class Examination {
 	private final int examID = 0; // auto increment?

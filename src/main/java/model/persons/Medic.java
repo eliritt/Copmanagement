@@ -1,6 +1,6 @@
-package persons;
+package model.persons;
 
-import events.Examination;
+import model.events.Examination;
 
 public class Medic extends Employee {
 	private int examCounter = 0;

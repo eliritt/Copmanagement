@@ -1,4 +1,4 @@
-package schedules;
+package model.schedules;
 
 public class Roster {
 
