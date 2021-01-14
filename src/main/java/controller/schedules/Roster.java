@@ -8,7 +8,7 @@ public class Roster {
 	protected ArrayList timetable;
 	
 	public Roster(int diffHours, int diffVacation, ArrayList tasks, ArrayList openTrainings, ArrayList timetable) {
-		super();
+		
 		this.diffHours = diffHours;
 		this.diffVacation = diffVacation;
 		this.tasks = tasks;
