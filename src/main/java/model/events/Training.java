@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import model.persons.Trainer;
 
 public class Training {
-	private int trainingID;
+	private final int trainingID;
 	private String name;
 	private String description;
 	private Trainer trainer;
@@ -27,10 +27,6 @@ public class Training {
 	
 	public int getTrainingID() {
 		return trainingID;
-	}
-
-	public void setTrainingID(int trainingID) {
-		this.trainingID = trainingID;
 	}
 
 	public String getName() {
@@ -79,6 +75,13 @@ public class Training {
 
 	public void setRequirements(String requirements) {
 		this.requirements = requirements;
+	}
+
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}	
-	
 }
