@@ -1,4 +1,4 @@
-package model.schedules;
+package controller.schedules;
 
 import java.util.ArrayList;
 //Roster  beudeutet Dienstplan
