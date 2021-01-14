@@ -1,19 +1,22 @@
 package model.schedules;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import model.events.Training;
 //Roster  beudeutet Dienstplan
 public class Roster {
 	private int diffHours, diffVacation;
-	protected ArrayList tasks, openTrainings;
-	protected ArrayList timetable;
+	private final List<String> tasks; // should show open Tasks from colleague
+	private final List<Training>openTrainings; // Get data from Class Training
+	private final List<String> timetable; // should show when shift starts and ends
 	
-	public Roster(int diffHours, int diffVacation, ArrayList tasks, ArrayList openTrainings, ArrayList timetable) {
-		super();
+	public Roster(int diffHours, int diffVacation) {
 		this.diffHours = diffHours;
 		this.diffVacation = diffVacation;
-		this.tasks = tasks;
-		this.openTrainings = openTrainings;
-		this.timetable = timetable;
+		tasks = new ArrayList<>();
+		openTrainings = new ArrayList<>();
+		timetable = new ArrayList<>();		
 	}
 
 	private int getDiffHours() {
@@ -31,29 +34,17 @@ public class Roster {
 	private void setDiffVacation(int diffVacation) {
 		this.diffVacation = diffVacation;
 	}
-
-	private ArrayList getTasks() {
+	
+	public List<String> getTasks() {
 		return tasks;
 	}
 
-	private void setTasks(ArrayList tasks) {
-		this.tasks = tasks;
-	}
-
-	private ArrayList getOpenTrainings() {
+	public List<Training> getOpenTrainings() {
 		return openTrainings;
 	}
 
-	private void setOpenTrainings(ArrayList openTrainings) {
-		this.openTrainings = openTrainings;
-	}
-
-	private ArrayList getTimetable() {
+	public List<String> getTimetable() {
 		return timetable;
-	}
-
-	private void setTimetable(ArrayList timetable) {
-		this.timetable = timetable;
 	}
 
 	@Override
