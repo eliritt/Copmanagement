@@ -25,6 +25,7 @@ public class Examination {
 	 * @return The new (incremented) examID.
 	 */
 	private int incrementID() {	// method is private because it is only used inside this class
+		// TODO Method does not work properly (id is always 1)
 		examID += 1;
 		return examID;
 	}
@@ -52,7 +53,7 @@ public class Examination {
 	public void addParticipant(Employee emp) {
 		participants.add(emp);
 		System.out.println("[Examination] Added employee to exam participants: ");
-		System.out.println("[Examination] +"emp.toString()+".");
+		System.out.println("[Examination] "+emp.toString()+".");
 	}
 
 	/**
@@ -62,7 +63,7 @@ public class Examination {
 	public void removeParticipant(Employee emp) {
 		participants.remove(emp);
 		System.out.println("[Examination] Removed employee from exam participants.");
-		System.out.println("[Examination] +"emp.toString()+".");
+		System.out.println("[Examination] "+emp.toString()+".");
 	}
 
 	/**
