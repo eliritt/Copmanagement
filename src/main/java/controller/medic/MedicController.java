@@ -6,7 +6,9 @@ import model.persons.Employee;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MedicController {
 
@@ -49,6 +51,38 @@ public class MedicController {
 
     }
 
+    /*
+     * ********
+     * findExam() methods below are for internal use to prevent replications in the code
+     * ********
+     */
+    public Examination findExamByDate(LocalDateTime examDate, List<Examination> examList) {
+        for (Examination e: examList) {
+            if (e.getExamDate().equals(examDate)) {
+                return e;
+            }
+        }
+        System.out.println("[Medic] findExamByDate() -> Could not find examination with the given parameters");
+        return null;
+    }
+
+    public Examination findExamByDate(String examDate, List<Examination> examList) {
+        LocalDateTime tmpDate = LocalDateTime.parse(examDate, dateFormat);
+        for (Examination e: examList) {
+            if (e.getExamDate().equals(tmpDate)) {
+                return e;
+            }
+        }
+        System.out.println("[Medic] findExamByDate() -> Could not find examination with the given parameters");
+        return null;
+    }
+
+    /*
+     * ********
+     * End of findExam() methods
+     * ********
+     */
+
     public void showAllExaminations() {
         System.out.println("[*] Examination overview: ");
         for (Examination e : pendingExamDates) {
@@ -58,7 +92,17 @@ public class MedicController {
 
     public void showParticipants(LocalDateTime dateOfExamination) {
         System.out.println("[Examination] Listing participants for examination, scheduled at: " + dateOfExamination.format(dateFormat) + ".");
-//      TODO implement method
+        Set<Employee> participants = new HashSet<>();
+        Examination tmpExam = findExamByDate(dateOfExamination, pendingExamDates);
+        if(tmpExam != null) {
+            participants = tmpExam.getParticipants();
+            for (Employee e: participants) {
+                System.out.println(e.toString()+"\n");
+            }
+        } else {
+            System.out.println("[Examination] Failure: No exams found.\n");
+        }
+
     }
 
     //  Confirm the yearly examination for an employee (for HR department)
@@ -68,12 +112,12 @@ public class MedicController {
     }
 
     //  Method is intended to set an Exam to finished
-    public void completeExamination(Examination e, Employee emp) {
+    public void completeExamination(Examination e) {
 //		TODO Change "Employee" to the according class for policemen in field
 //      TODO Complete exam => remove from pending exams, add it to completed exam list
     }
 
-    //  Generate a medical attest for an employee (passed exam/not passed)
+    //  Generate a medical attest for an employee (in field) (passed exam/not passed)
     public void generateAttest(Examination e, Employee emp) {
 //		TODO Change "Employee" to the according class for policemen in field
     }
