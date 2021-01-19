@@ -26,5 +26,13 @@ public class Termination {
     public LocalDateTime getDateEnd() {
         return dateEnd;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Termination{" +
+                "employee=" + employee +
+                ", leavingReason='" + leavingReason + '\'' +
+                ", dateEnd=" + dateEnd +
+                '}';
+    }
 }
