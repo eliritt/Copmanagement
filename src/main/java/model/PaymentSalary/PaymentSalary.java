@@ -6,56 +6,27 @@ import java.time.LocalDate;
 
 public class PaymentSalary {
 
-    private final int paymentID;
-    private final Employee employee;
-    private String paymentReason;
-    private final LocalDate paymentDay;
-    private int paymentAmount;
+    private double amount;
+    private LocalDate nextIncrease;
 
-    public PaymentSalary(int paymentID, Employee employee, String paymentReason, LocalDate paymentDay, int paymentAmount) {
-        this.paymentID = paymentID;
-        this.employee = employee;
-        this.paymentReason = paymentReason;
-        this.paymentDay = paymentDay;
-        this.paymentAmount = paymentAmount;
+    public PaymentSalary(double amount, LocalDate nextIncrease) {
+        this.amount = amount;
+        this.nextIncrease = nextIncrease;
     }
 
-    public int getPaymentID() {
-        return paymentID;
+    public double getAmount() {
+        return amount;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
-    public String getPaymentReason() {
-        return paymentReason;
+    public LocalDate getNextIncrease() {
+        return nextIncrease;
     }
 
-    public void setPaymentReason(String paymentReason) {
-        this.paymentReason = paymentReason;
-    }
-
-    public LocalDate getPaymentDay() {
-        return paymentDay;
-    }
-
-    public int getPaymentAmount() {
-        return paymentAmount;
-    }
-
-    public void setPaymentAmount(int paymentAmount) {
-        this.paymentAmount = paymentAmount;
-    }
-
-    @Override
-    public String toString() {
-        return "PaymentSalary{" +
-                "paymentID=" + paymentID +
-                ", employee=" + employee +
-                ", paymentReason='" + paymentReason + '\'' +
-                ", paymentDay=" + paymentDay +
-                ", paymentAmount=" + paymentAmount +
-                '}';
+    public void setNextIncrease(LocalDate nextIncrease) {
+        this.nextIncrease = nextIncrease;
     }
 }
