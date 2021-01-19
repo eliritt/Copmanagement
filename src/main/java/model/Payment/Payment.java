@@ -1,15 +1,13 @@
-package model.PaymentSalary;
-
-import model.persons.Employee;
+package model.Payment;
 
 import java.time.LocalDate;
 
-public class PaymentSalary {
+public class Payment {
 
     private double amount;
     private LocalDate nextIncrease;
 
-    public PaymentSalary(double amount, LocalDate nextIncrease) {
+    public Payment(double amount, LocalDate nextIncrease) {
         this.amount = amount;
         this.nextIncrease = nextIncrease;
     }
@@ -28,5 +26,13 @@ public class PaymentSalary {
 
     public void setNextIncrease(LocalDate nextIncrease) {
         this.nextIncrease = nextIncrease;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "amount=" + amount +
+                ", nextIncrease=" + nextIncrease +
+                '}';
     }
 }
