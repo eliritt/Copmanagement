@@ -62,4 +62,9 @@ public class Employee extends Person {
         return staffID == employee.staffID;
     }
 
+    @Override
+    public String toString() {
+        return "[Employee] First name = "+super.getFirstname()+" | Last name = "+super.getLastname()+" | DateOfBirth = "+super.getDateOfBirth()+" | Address = "+super.getAddress().toString()+
+                " | StaffID = "+staffID+" | E-Mail = "+email+" | Phone = "+phone+" | Roster = "+roster+".";
+    }
 }
