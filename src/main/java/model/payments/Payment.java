@@ -46,4 +46,15 @@ public class Payment {
     public void setPaymentAmount(int paymentAmount) {
         this.paymentAmount = paymentAmount;
     }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "paymentID=" + paymentID +
+                ", employee=" + employee +
+                ", paymentReason='" + paymentReason + '\'' +
+                ", paymentDay=" + paymentDay +
+                ", paymentAmount=" + paymentAmount +
+                '}';
+    }
 }

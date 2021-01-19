@@ -31,4 +31,12 @@ public class SpecialPayment extends Payment {
     public void setSpecialPaymentReason(String specialPaymentReason) {
         SpecialPaymentReason = specialPaymentReason;
     }
+
+    @Override
+    public String toString() {
+        return "SpecialPayment{" +
+                "SpecialPaymentReason='" + SpecialPaymentReason + '\'' +
+                ", SpecialPaymentAmount=" + SpecialPaymentAmount +
+                '}';
+    }
 }
