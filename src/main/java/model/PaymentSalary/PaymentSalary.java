@@ -1,9 +1,10 @@
-package model.payments;
+package model.PaymentSalary;
 
 import model.persons.Employee;
+
 import java.time.LocalDate;
 
-public class Payment {
+public class PaymentSalary {
 
     private final int paymentID;
     private final Employee employee;
@@ -11,7 +12,7 @@ public class Payment {
     private final LocalDate paymentDay;
     private int paymentAmount;
 
-    public Payment(int paymentID, Employee employee, String paymentReason, LocalDate paymentDay, int paymentAmount) {
+    public PaymentSalary(int paymentID, Employee employee, String paymentReason, LocalDate paymentDay, int paymentAmount) {
         this.paymentID = paymentID;
         this.employee = employee;
         this.paymentReason = paymentReason;
@@ -45,5 +46,16 @@ public class Payment {
 
     public void setPaymentAmount(int paymentAmount) {
         this.paymentAmount = paymentAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "PaymentSalary{" +
+                "paymentID=" + paymentID +
+                ", employee=" + employee +
+                ", paymentReason='" + paymentReason + '\'' +
+                ", paymentDay=" + paymentDay +
+                ", paymentAmount=" + paymentAmount +
+                '}';
     }
 }

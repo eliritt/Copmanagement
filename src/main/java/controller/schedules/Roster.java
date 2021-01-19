@@ -1,18 +1,17 @@
-package model.schedules;
+package controller.schedules;
 
-import java.util.List;
+import java.time.LocalDate;
 
-import model.events.Training;
+
+import model.persons.Address;
 import model.persons.Employee;
 //Roster  beudeutet Dienstplan
 public class Roster {
 
-    private  Employee employee;
+	private  Employee employee;
     private  boolean isOnVacation;
     private  boolean isSick;
-    private  int workingTime;
-    
-    
+    private int workingTime;
 	public Roster(Employee employee, boolean isOnVacation, boolean isSick, int workingTime) {
 		super();
 		this.employee = employee;
@@ -20,4 +19,8 @@ public class Roster {
 		this.isSick = isSick;
 		this.workingTime = workingTime;
 	}
+    
+
+   
+
 }
