@@ -2,43 +2,59 @@ package model.persons;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
+import model.events.Examination;
+import model.events.Training;
 import model.schedules.Roster;
 
 
 public class FieldOfficer extends Employee {
+	// Class for fieldofficer
 	
-	public String partner;
-	public String car;
-	public String area;
+	private String rank;
+	private List<Training> trainings;
+	private List<Examination> educations;
+	// educations ist nicht vorhanden!!
+	
 	
 	public FieldOfficer(String firstname, String lastname, LocalDate dateOfBirth, Address address, int staffID,
-			String email, String phone, Roster roster) {
+			String email, String phone, Roster roster, String rank, List<Training> trainings,
+			List<Examination> educations) {
 		super(firstname, lastname, dateOfBirth, address, staffID, email, phone, roster);
-
+		this.rank = rank;
+		this.trainings = trainings;
+		this.educations = educations;
 	}
 
-	public String getPartner() {
-		return partner;
+
+	public String getRank() {
+		return rank;
 	}
 
-	public void setPartner(String partner) {
-		this.partner = partner;
+
+	public void setRank(String rank) {
+		this.rank = rank;
 	}
 
-	public String getCar() {
-		return car;
+
+	public List<Training> getTrainings() {
+		return trainings;
 	}
 
-	public void setCar(String car) {
-		this.car = car;
+
+	public void setTrainings(List<Training> trainings) {
+		this.trainings = trainings;
 	}
 
-	public String getArea() {
-		return area;
+
+	public List<Examination> getEducations() {
+		return educations;
 	}
 
-	public void setArea(String area) {
-		this.area = area;
+
+	public void setEducations(List<Examination> educations) {
+		this.educations = educations;
 	}
+	
 }
