@@ -7,24 +7,25 @@ import java.util.List;
 import model.events.Examination;
 import model.events.Training;
 import model.schedules.Roster;
+import model.events.*;
 
 
 public class FieldOfficer extends Employee {
 	// Class for fieldofficer
-	
+
 	private String rank;
-	private List<Training> trainings;
-	private List<Examination> educations;
+	private List<Training> trainings = new ArrayList<Training>();
+	private List<Examination> examinations = new ArrayList<Examination>();
 	// educations ist nicht vorhanden!!
-	
-	
+
+
 	public FieldOfficer(String firstname, String lastname, LocalDate dateOfBirth, Address address, int staffID,
-			String email, String phone, Roster roster, String rank, List<Training> trainings,
-			List<Examination> educations) {
+						String email, String phone, Roster roster, String rank, List<Training> trainings,
+						List<Examination> educations) {
 		super(firstname, lastname, dateOfBirth, address, staffID, email, phone, roster);
 		this.rank = rank;
 		this.trainings = trainings;
-		this.educations = educations;
+		this.examinations = educations;
 	}
 
 
@@ -46,15 +47,7 @@ public class FieldOfficer extends Employee {
 	public void setTrainings(List<Training> trainings) {
 		this.trainings = trainings;
 	}
-
-
-	public List<Examination> getEducations() {
-		return educations;
-	}
-
-
-	public void setEducations(List<Examination> educations) {
-		this.educations = educations;
-	}
-	
 }
+
+
+
