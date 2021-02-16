@@ -7,11 +7,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class MedicTestConsole {
-//    Class is intended to test the "medic" branch and will be removed afterwards
+    //    Class is intended to test the "medic" branch and will be removed afterwards
     private final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm");
 
     MedicController controller = new MedicController();
-
 
     public void dialog() {
         Scanner userInput = new Scanner(System.in);
@@ -19,38 +18,64 @@ public class MedicTestConsole {
         System.out.println("[+] Hi Doc. What do you want to do?");
         System.out.println("[+] Please choose one of the following options:");
         System.out.println("[+] 1. Schedule new examination | 2. Show all scheduled examinations | 3. Cancel an examination");
-        System.out.println("[+] 4. Generate a participant list (pdf file) | 5. Confirm participation for an employee");
-        System.out.println("[+] 6. Generate an attest for an employee | 7. ... more to come ...");
-//      TODO Add method for displaying one specific examination
+        System.out.println("[+] 4. Generate a participant list | 5. Confirm participation for an employee");
+        System.out.println("[+] 6. Generate an attest for an employee | 7. Show completed examinations");
 
         int choice = userInput.nextInt();
         userInput.nextLine();
 
-        switch(choice) {
+        switch (choice) {
             case 1:
                 System.out.println("[+] *** SCHEDULE NEW EXAMINATION ***");
+                System.out.println("[+] Please type the name of the exam below: ");
+                int examID = Integer.parseInt(userInput.nextLine());
                 System.out.println("[+] Please type the name of the exam below: ");
                 String examName = userInput.nextLine();
                 System.out.println("[+] Please type the date of the exam below: (!! use format: yyyy-MM-dd hh:mm !!)");
                 String examDateStr = userInput.nextLine();
                 LocalDateTime examDate = LocalDateTime.parse(examDateStr, dateFormat);
-                controller.createExamination(examName, examDate);
+                controller.createExamination(examID, examName, examDate);
                 dialog();
             case 2:
+                System.out.println("[+] *** EXAMINATION OVERVIEW ***");
                 System.out.println("[+] Displaying all scheduled examinations: ");
                 controller.showAllExaminations();
                 dialog();
             case 3:
+                System.out.println("[+] *** CANCEL EXAMINATION ***");
                 System.out.println("[+] Which exam do you want to cancel? Type date below: (!! use format: yyyy-MM-dd hh:mm !!)");
                 String cancelDateStr = userInput.nextLine();
                 LocalDateTime cancelDate = LocalDateTime.parse(cancelDateStr, dateFormat);
                 controller.cancelExamination(cancelDate);
                 dialog();
+            case 4:
+                System.out.println("[+] *** EXAM PARTICIPANT LIST ***");
+                System.out.println("[+] Please enter the date of the exam: (!! use format: yyyy-MM-dd hh:mm !!)");
+                String eDate = userInput.nextLine();
+                controller.showParticipants(LocalDateTime.parse(eDate, DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm")));
+                dialog();
+            case 5:
+                System.out.println("[+] *** CONFIRM EXAMINATION FOR EMPLOYEE ***");
+                System.out.println("[+] Please enter the employee's ID:"); // or whatever you want to use to search for an employee
+
+                /*
+                 * TODO Add logic
+                 * In order to use this method, you must provide logic for searching for an employee (e. g. by ID).
+                 * The controller's method takes in an OBJECT with type FieldOfficer (which is an employee).
+                 * Then you can use method below to execute.
+                 *
+                 * controller.confirmExaminationForEmployee(FieldOfficer emp);
+                 */
+
+                dialog();
+            case 7:
+                System.out.println("*** PRINTING COMPLETED EXAMS ***");
+                controller.showCompletedExaminations();
+                dialog();
             default:
                 System.out.println("[+] No valid choice. Back to main menu.");
                 break;
-
-                // TODO Add the outstanding cases above
+            // TODO Add the outstanding cases above
         }
 
     }
