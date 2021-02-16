@@ -48,7 +48,7 @@ public class MedicTestConsole {
                 dialog();
             case 4:
                 System.out.println("[+] *** EXAM PARTICIPANT LIST ***");
-                System.out.println("[+] Please enter the date of the exam:");
+                System.out.println("[+] Please enter the date of the exam: (!! use format: yyyy-MM-dd hh:mm !!)");
                 String eDate = userInput.nextLine();
                 controller.showParticipants(LocalDateTime.parse(eDate, DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm")));
                 dialog();
