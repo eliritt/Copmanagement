@@ -3,15 +3,13 @@ package model.persons;
 import model.schedules.Roster;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Employee extends Person {
     private final int staffID;
     private String email;
     private String phone;
     private Roster roster;
-    private static final Set<Employee> employeeDB = new HashSet<>();
+
 
     public Employee(String firstname, String lastname, LocalDate dateOfBirth, Address address, int staffID,
                     String email, String phone, Roster roster) {
@@ -50,10 +48,6 @@ public class Employee extends Person {
         this.roster = roster;
     }
 
-    public static Set<Employee> getEmployeeDB() {
-        return employeeDB;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -64,7 +58,7 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return "[Employee] First name = "+super.getFirstname()+" | Last name = "+super.getLastname()+" | DateOfBirth = "+super.getDateOfBirth()+" | Address = "+super.getAddress().toString()+
-                " | StaffID = "+staffID+" | E-Mail = "+email+" | Phone = "+phone+" | Roster = "+roster+".";
+        return "[Employee] First name = " + super.getFirstname() + " | Last name = " + super.getLastname() + " | DateOfBirth = " + super.getDateOfBirth() + " | Address = " + super.getAddress().toString() +
+                " | StaffID = " + staffID + " | E-Mail = " + email + " | Phone = " + phone + " | Roster = " + roster + ".";
     }
 }
