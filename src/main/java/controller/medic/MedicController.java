@@ -1,14 +1,12 @@
 package controller.medic;
 
 import model.events.Examination;
-import model.persons.Employee;
+import model.persons.FieldOfficer;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class MedicController {
 
@@ -45,7 +43,7 @@ public class MedicController {
                 break;
             }
         }
-        if(!success) {
+        if (!success) {
             System.out.println("[Medic] *** NO EXAMINATION WAS FOUND TO CANCEL! CHECK IF DATE IS CORRECT AND RETRY? ***\n");
         }
 
@@ -57,7 +55,7 @@ public class MedicController {
      * ********
      */
     public Examination findExamByDate(LocalDateTime examDate, List<Examination> examList) {
-        for (Examination e: examList) {
+        for (Examination e : examList) {
             if (e.getExamDate().equals(examDate)) {
                 return e;
             }
@@ -68,7 +66,7 @@ public class MedicController {
 
     public Examination findExamByDate(String examDate, List<Examination> examList) {
         LocalDateTime tmpDate = LocalDateTime.parse(examDate, DATE_FORMAT);
-        for (Examination e: examList) {
+        for (Examination e : examList) {
             if (e.getExamDate().equals(tmpDate)) {
                 return e;
             }
@@ -91,35 +89,39 @@ public class MedicController {
     }
 
     public void showParticipants(LocalDateTime dateOfExamination) {
-        System.out.println("[Examination] Listing participants for examination, scheduled at: " + dateOfExamination.format(DATE_FORMAT) + ".");
-        Set<Employee> participants = new HashSet<>();
         Examination tmpExam = findExamByDate(dateOfExamination, pendingExamDates);
-        if(tmpExam != null) {
-            participants = tmpExam.getParticipants();
-            for (Employee e: participants) {
-                System.out.println(e.toString()+"\n");
-            }
-        } else {
+        if (tmpExam == null) {
             System.out.println("[Examination] Failure: No exams found.\n");
+        } else if (tmpExam.getParticipantCount() == 0) {
+            System.out.println("[Examination] Failure: No participant for this examination.\n");
+        } else {
+            System.out.println("[Examination] Listing participants for examination, scheduled at: " + dateOfExamination.format(DATE_FORMAT) + ":\n");
+            for (FieldOfficer e : tmpExam.getParticipants()) {
+                System.out.println(e);
+            }
         }
 
     }
 
     //  Confirm the yearly examination for an employee (for HR department)
-    public void confirmExaminationForEmployee(Employee emp) {
-//		TODO implement method
-
+    public void confirmExaminationForEmployee(FieldOfficer emp) {
+        emp.setExamValidity(true);
+        emp.removeExamination();
     }
 
     //  Method is intended to set an Exam to finished
-    public void completeExamination(Examination e) {
-//		TODO Change "Employee" to the according class for policemen in field
-//      TODO Complete exam => remove from pending exams, add it to completed exam list
+    public void completeExamination(Examination currentExam) {
+        for (Examination e : pendingExamDates) {
+            if (e.equals(currentExam)) {
+                completedExamDates.add(e);
+                pendingExamDates.remove(e);
+            }
+        }
     }
 
     //  Generate a medical attest for an employee (in field) (passed exam/not passed)
-    public void generateAttest(Examination e, Employee emp) {
-//		TODO Change "Employee" to the according class for policemen in field
+    public void generateAttest(Examination e, FieldOfficer emp) {
+//        TODO PFD Attest for policemen
     }
 
     public void generateListing() {
