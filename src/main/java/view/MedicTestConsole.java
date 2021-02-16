@@ -28,11 +28,13 @@ public class MedicTestConsole {
             case 1:
                 System.out.println("[+] *** SCHEDULE NEW EXAMINATION ***");
                 System.out.println("[+] Please type the name of the exam below: ");
+                int examID = Integer.parseInt(userInput.nextLine());
+                System.out.println("[+] Please type the name of the exam below: ");
                 String examName = userInput.nextLine();
                 System.out.println("[+] Please type the date of the exam below: (!! use format: yyyy-MM-dd hh:mm !!)");
                 String examDateStr = userInput.nextLine();
                 LocalDateTime examDate = LocalDateTime.parse(examDateStr, dateFormat);
-                controller.createExamination(examName, examDate);
+                controller.createExamination(examID, examName, examDate);
                 dialog();
             case 2:
                 System.out.println("[+] *** EXAMINATION OVERVIEW ***");
@@ -51,6 +53,20 @@ public class MedicTestConsole {
                 System.out.println("[+] Please enter the date of the exam: (!! use format: yyyy-MM-dd hh:mm !!)");
                 String eDate = userInput.nextLine();
                 controller.showParticipants(LocalDateTime.parse(eDate, DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm")));
+                dialog();
+            case 5:
+                System.out.println("[+] *** CONFIRM EXAMINATION FOR EMPLOYEE ***");
+                System.out.println("[+] Please enter the employee's ID:"); // or whatever you want to use to search for an employee
+
+                /*
+                 * TODO Add logic
+                 * In order to use this method, you must provide logic for searching for an employee (e. g. by ID).
+                 * The controller's method takes in an OBJECT with type FieldOfficer (which is an employee).
+                 * Then you can use method below to execute.
+                 *
+                 * controller.confirmExaminationForEmployee(FieldOfficer emp);
+                 */
+
                 dialog();
             case 7:
                 System.out.println("*** PRINTING COMPLETED EXAMS ***");
