@@ -8,25 +8,34 @@ import model.persons.Trainer;
 
 public class Training {
 	public static final List <Training> trainings = new ArrayList <>();
-	private final int trainingID;
+	public final int trainingID;
 	private String name;
 	private String description;
-	private Trainer trainer;
 	private LocalDateTime dateTime;
 	private String place;
 	private int maxParticipants;
 	private String requirements;
 	
-	public Training(int trainingID, String name, String description, Trainer trainer, LocalDateTime dateTime, String place,
+	public Training(int trainingID, String name, String description, LocalDateTime dateTime, String place,
 			int maxParticipants, String requirements) {
 		this.trainingID = trainingID;
 		this.name = name;
 		this.description = description;
-		this.trainer = trainer;
 		this.dateTime = dateTime;
 		this.place = place;
 		this.maxParticipants = maxParticipants;
 		this.requirements = requirements;
+	}
+		
+		public Training(String name, String description, LocalDateTime dateTime, String place,
+				int maxParticipants, String requirements) {
+			this.trainingID = 0;
+			this.name = name;
+			this.description = description;
+			this.dateTime = dateTime;
+			this.place = place;
+			this.maxParticipants = maxParticipants;
+			this.requirements = requirements;
 	}
 	
 	public static List<Training> getTrainings() {
@@ -85,11 +94,4 @@ public class Training {
 		this.requirements = requirements;
 	}
 
-	public Trainer getTrainer() {
-		return trainer;
-	}
-
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
-	}	
 }

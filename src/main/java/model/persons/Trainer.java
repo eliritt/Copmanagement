@@ -1,8 +1,11 @@
 package model.persons;
 
+import model.events.Training;
 import model.schedules.Roster;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Trainer extends Employee {
 	
@@ -16,5 +19,4 @@ public class Trainer extends Employee {
 	public String getSpecialisation() {
 		return specialisation;
 	}
-	
 }
