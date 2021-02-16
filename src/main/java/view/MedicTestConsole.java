@@ -12,14 +12,13 @@ public class MedicTestConsole {
 
     MedicController controller = new MedicController();
 
-
     public void dialog() {
         Scanner userInput = new Scanner(System.in);
 
         System.out.println("[+] Hi Doc. What do you want to do?");
         System.out.println("[+] Please choose one of the following options:");
         System.out.println("[+] 1. Schedule new examination | 2. Show all scheduled examinations | 3. Cancel an examination");
-        System.out.println("[+] 4. Generate a participant list (pdf file) | 5. Confirm participation for an employee");
+        System.out.println("[+] 4. Generate a participant list | 5. Confirm participation for an employee");
         System.out.println("[+] 6. Generate an attest for an employee | 7. ... more to come ...");
 //      TODO Add method for displaying one specific examination
 
@@ -45,6 +44,12 @@ public class MedicTestConsole {
                 String cancelDateStr = userInput.nextLine();
                 LocalDateTime cancelDate = LocalDateTime.parse(cancelDateStr, dateFormat);
                 controller.cancelExamination(cancelDate);
+                dialog();
+            case 4:
+                System.out.println("[+] *** EXAM PARTICIPANT LIST ***");
+                System.out.println("[+] Please enter the date of the exam:");
+                String eDate = userInput.nextLine();
+                controller.showParticipants(LocalDateTime.parse(eDate, DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm")));
                 dialog();
             default:
                 System.out.println("[+] No valid choice. Back to main menu.");
