@@ -8,27 +8,20 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Examination {
-    private int examID;
+    /*
+     * Unfortunately, examID must be assigned manually. The reason is that data is not persistently stored in a database, and each time
+     * the program is closed, data will get lost. Therefore it is easier to define the ID manually.
+     */
+    private final int examID;
     private final String examName;
     private LocalDateTime examDate;
 
     private final Set<FieldOfficer> participants = new HashSet<>();
 
-    public Examination(String name, LocalDateTime date) {
-        examID = incrementID();
+    public Examination(int id, String name, LocalDateTime date) {
+        examID = id;
         examName = name;
         examDate = date;
-    }
-
-    /**
-     * A Method that increments the examID automatically. Every exam that is created has an ID to identify it (primary key).
-     *
-     * @return The new (incremented) examID.
-     */
-    private int incrementID() {    // method is private because it is only used inside this class
-//        TODO Method does not work properly (id is always 1)
-        examID += 1;
-        return examID;
     }
 
     public int getExamID() {
