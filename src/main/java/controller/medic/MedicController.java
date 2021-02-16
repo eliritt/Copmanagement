@@ -9,15 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MedicController {
-
-//  TODO Change "Employees" in each method to the according data type (policemen in field)
-
-    //  Pending Exams: Exams that are not completed (outstanding exams)
-//  Completed Exams: Exams that are completed and closed (exams in the past; stored for statistic purposes?)
+//    Pending Exams: Exams that are not completed (outstanding exams)
+//    Completed Exams: Exams that are completed and closed (exams in the past; stored for statistic purposes?)
     private final List<Examination> pendingExamDates = new ArrayList<>();
     private final List<Examination> completedExamDates = new ArrayList<>();
 
-    //  Template for output of date and time:
+//    Template for output of date and time:
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm");
 
     public MedicController() {
@@ -88,6 +85,13 @@ public class MedicController {
         }
     }
 
+    public void showCompletedExaminations() {
+        System.out.println("[*] Completed examination overview: ");
+        for (Examination e : completedExamDates) {
+            System.out.println("[*] Examination ID: " + e.getExamID() + " | Name/Description: " + e.getExamName() + " | Date: " + e.getExamDate().format(DATE_FORMAT) + ".\n");
+        }
+    }
+
     public void showParticipants(LocalDateTime dateOfExamination) {
         Examination tmpExam = findExamByDate(dateOfExamination, pendingExamDates);
         if (tmpExam == null) {
@@ -121,10 +125,10 @@ public class MedicController {
 
     //  Generate a medical attest for an employee (in field) (passed exam/not passed)
     public void generateAttest(Examination e, FieldOfficer emp) {
-//        TODO PFD Attest for policemen
+//        TODO Implement PDF generator
     }
 
     public void generateListing() {
-//      TODO listing of participants as pdf-file to print
+//      TODO Implement PDF generator
     }
 }
