@@ -20,7 +20,7 @@ public class MedicController {
     private final List<Examination> completedExamDates = new ArrayList<>();
 
     //  Template for output of date and time:
-    private final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm");
+    private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd kk:mm");
 
     public MedicController() {
         System.out.println("[Medic] Controller initialised");
@@ -28,7 +28,7 @@ public class MedicController {
 
     public void createExamination(String name, LocalDateTime date) {
         System.out.println("[Medic] *** EXAMINATION SCHEDULED SUCCESSFULLY ***");
-        System.out.println("[Medic] Description: " + name + " | scheduled at: " + date.format(dateFormat) + ".");
+        System.out.println("[Medic] Description: " + name + " | scheduled at: " + date.format(DATE_FORMAT) + ".");
 
         pendingExamDates.add(new Examination(name, date));
         System.out.println("[Medic] Redirecting you to main menu.\n");
@@ -39,7 +39,7 @@ public class MedicController {
         for (int i = 0; i < pendingExamDates.size(); i++) {
             if (pendingExamDates.get(i).getExamDate().equals(date)) {
                 System.out.println("[Medic] *** EXAMINATION CANCELLED SUCCESSFULLY ***");
-                System.out.println("[Medic] Description: " + pendingExamDates.get(i).getExamName() + " | scheduled at: " + pendingExamDates.get(i).getExamDate().format(dateFormat) + ".\n");
+                System.out.println("[Medic] Description: " + pendingExamDates.get(i).getExamName() + " | scheduled at: " + pendingExamDates.get(i).getExamDate().format(DATE_FORMAT) + ".\n");
                 pendingExamDates.remove(i);
                 success = true;
                 break;
@@ -67,7 +67,7 @@ public class MedicController {
     }
 
     public Examination findExamByDate(String examDate, List<Examination> examList) {
-        LocalDateTime tmpDate = LocalDateTime.parse(examDate, dateFormat);
+        LocalDateTime tmpDate = LocalDateTime.parse(examDate, DATE_FORMAT);
         for (Examination e: examList) {
             if (e.getExamDate().equals(tmpDate)) {
                 return e;
@@ -86,12 +86,12 @@ public class MedicController {
     public void showAllExaminations() {
         System.out.println("[*] Examination overview: ");
         for (Examination e : pendingExamDates) {
-            System.out.println("[*] Examination ID: " + e.getExamID() + " | Name/Description: " + e.getExamName() + " | Date: " + e.getExamDate().format(dateFormat) + ".\n");
+            System.out.println("[*] Examination ID: " + e.getExamID() + " | Name/Description: " + e.getExamName() + " | Date: " + e.getExamDate().format(DATE_FORMAT) + ".\n");
         }
     }
 
     public void showParticipants(LocalDateTime dateOfExamination) {
-        System.out.println("[Examination] Listing participants for examination, scheduled at: " + dateOfExamination.format(dateFormat) + ".");
+        System.out.println("[Examination] Listing participants for examination, scheduled at: " + dateOfExamination.format(DATE_FORMAT) + ".");
         Set<Employee> participants = new HashSet<>();
         Examination tmpExam = findExamByDate(dateOfExamination, pendingExamDates);
         if(tmpExam != null) {
