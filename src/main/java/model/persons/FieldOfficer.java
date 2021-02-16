@@ -10,13 +10,12 @@ import java.util.List;
 
 
 public class FieldOfficer extends Employee {
-    // Class for fieldofficer
 
     private String rank;
     private boolean examIsValid;
     private List<Training> trainings = new ArrayList<>();
     private Examination nextExam;
-    // educations ist nicht vorhanden!!
+    // TODO Add educations
 
     public FieldOfficer(String firstname, String lastname, LocalDate dateOfBirth, Address address, int staffID,
                         String email, String phone, Roster roster, String rank, List<Training> trainings,
