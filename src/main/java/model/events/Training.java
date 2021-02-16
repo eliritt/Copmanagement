@@ -1,10 +1,13 @@
 package model.events;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.persons.Trainer;
 
 public class Training {
+	public static final List <Training> trainings = new ArrayList <>();
 	private final int trainingID;
 	private String name;
 	private String description;
@@ -14,15 +17,20 @@ public class Training {
 	private int maxParticipants;
 	private String requirements;
 	
-	public Training(int trainingID, String name, String description, LocalDateTime dateTime, String place,
+	public Training(int trainingID, String name, String description, Trainer trainer, LocalDateTime dateTime, String place,
 			int maxParticipants, String requirements) {
 		this.trainingID = trainingID;
 		this.name = name;
 		this.description = description;
+		this.trainer = trainer;
 		this.dateTime = dateTime;
 		this.place = place;
 		this.maxParticipants = maxParticipants;
 		this.requirements = requirements;
+	}
+	
+	public static List<Training> getTrainings() {
+		return trainings;
 	}
 	
 	public int getTrainingID() {
