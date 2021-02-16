@@ -21,11 +21,11 @@ public class MedicController {
         System.out.println("[Medic] Controller initialised");
     }
 
-    public void createExamination(String name, LocalDateTime date) {
+    public void createExamination(int id, String name, LocalDateTime date) {
         System.out.println("[Medic] *** EXAMINATION SCHEDULED SUCCESSFULLY ***");
         System.out.println("[Medic] Description: " + name + " | scheduled at: " + date.format(DATE_FORMAT) + ".");
 
-        pendingExamDates.add(new Examination(name, date));
+        pendingExamDates.add(new Examination(id, name, date));
         System.out.println("[Medic] Redirecting you to main menu.\n");
     }
 
