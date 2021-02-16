@@ -1,32 +1,30 @@
 package model.events;
 
-import model.persons.Employee;
+import java.time.LocalDate;
 
 public class Termination {
 
-    private final Employee employee;
-    private Boolean isPresent;
-    private final String leavingReason;
+    private final LocalDate date;
+    private final String reason;
 
-    public Termination(Employee employee, Boolean isPresent, String leavingReason) {
-        this.employee = employee;
-        this.isPresent = isPresent;
-        this.leavingReason = leavingReason;
+    public Termination(LocalDate date, String reason) {
+        this.date = date;
+        this.reason = reason;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public Boolean getPresent() {
-        return isPresent;
+    public String getReason() {
+        return reason;
     }
 
-    public void setPresent(Boolean present) {
-        isPresent = present;
-    }
-
-    public String getLeavingReason() {
-        return leavingReason;
+    @Override
+    public String toString() {
+        return "Termination{" +
+                "date=" + date +
+                ", reason='" + reason + '\'' +
+                '}';
     }
 }
