@@ -26,7 +26,7 @@ public class Examination {
      * @return The new (incremented) examID.
      */
     private int incrementID() {    // method is private because it is only used inside this class
-        // TODO Method does not work properly (id is always 1)
+//        TODO Method does not work properly (id is always 1)
         examID += 1;
         return examID;
     }
